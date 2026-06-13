@@ -1,0 +1,39 @@
+# NAME: Claude
+# DESC: Anthropic / Claude / Claude Code 全量域名 + IP。配合 RULE-SET 指向「一个固定出口节点」(如 owo)，
+#       让 Claude 账号在 Anthropic 眼里始终是同一个 IP，避免 IP 漂移触发风控 / 封号。
+# 用法 (Surge [Rule]): RULE-SET,https://raw.githubusercontent.com/RaylenZed/rule/main/Claude.list,owo
+# 来源: ip.net.coffee/claude (site.html) + blackmatrix7 + Anthropic ASN AS399358
+# SELF-MANAGED by RaylenZed. UPDATED: 2026-06-13
+
+# ===== 核心: Anthropic / Claude / Claude Code 的 API + 网页 =====
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claude.com
+DOMAIN-SUFFIX,clau.de
+DOMAIN-SUFFIX,claudeusercontent.com
+DOMAIN-SUFFIX,claudemcpclient.com
+DOMAIN-SUFFIX,claudemcpcontent.com
+
+# ===== 认证: OAuth 登录 / token 刷新 (对「固定 IP」最关键, blackmatrix7 恰恰缺这条) =====
+DOMAIN,anthropic.auth0.com
+
+# ===== CDN / 静态资源 =====
+DOMAIN,anthropic.com.cdn.cloudflare.net
+DOMAIN,servd-anthropic-website.b-cdn.net
+DOMAIN,anthropic-com.ghost.io
+
+# ===== 遥测 / 特性开关 / 风控 (让账号相关信号也从固定 IP 出) =====
+DOMAIN-SUFFIX,statsigapi.net
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN,browser-intake-us5-datadoghq.com
+DOMAIN-SUFFIX,siftscience.com
+
+# ===== 共享第三方 (较宽; 不想让其他 App 的这类流量也走此出口, 可删掉这一组) =====
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN,cdn.usefathom.com
+
+# ===== Anthropic 自有 IP 段 (AS399358) — 兜底: 直连 IP 而非域名的连接 =====
+IP-CIDR,160.79.104.0/21,no-resolve
+IP-CIDR6,2607:6bc0::/32,no-resolve
