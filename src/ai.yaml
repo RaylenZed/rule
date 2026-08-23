@@ -1,6 +1,9 @@
-# AI
+# Combined AI rules. First-party only.
+# Sources: VPSDance/ai-proxy-rules rules/clash/{openai,anthropic,x-ai,cursor,copilot,google-ai}.yaml
 rules:
-  # ChatGPT / OpenAI / Sora
+
+  # OpenAI / ChatGPT / Sora
+  # https://github.com/VPSDance/ai-proxy-rules/blob/main/rules/clash/openai.yaml
   - DOMAIN-SUFFIX,openai.com
   - DOMAIN-SUFFIX,chatgpt.com
   - DOMAIN-SUFFIX,oaistatic.com
@@ -9,47 +12,89 @@ rules:
   - DOMAIN-SUFFIX,chat.com
   - DOMAIN-SUFFIX,ai.com
   - DOMAIN-SUFFIX,chatgpt.livekit.cloud
+  - DOMAIN-SUFFIX,crixet.com
+  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+  - DOMAIN-SUFFIX,openaicom.imgix.net
+  - DOMAIN-SUFFIX,chatgpt.site
+  - DOMAIN-KEYWORD,chatgpt-async-webps-prod
   - IP-CIDR,199.47.142.0/23,no-resolve
+  - IP-CIDR,24.199.123.28/32,no-resolve
+  - IP-CIDR,64.23.132.171/32,no-resolve
+  - IP-CIDR6,2604:f20::/32,no-resolve
   - IP-ASN,401518,no-resolve
-  # Claude / Anthropic
+
+  # Anthropic / Claude
+  # https://github.com/VPSDance/ai-proxy-rules/blob/main/rules/clash/anthropic.yaml
   - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,claude.ai
   - DOMAIN-SUFFIX,claude.com
+  - DOMAIN-SUFFIX,claude.app
+  - DOMAIN-SUFFIX,claude.new
+  - DOMAIN-SUFFIX,claude.site
   - DOMAIN-SUFFIX,clau.de
   - DOMAIN-SUFFIX,claudeusercontent.com
+  - DOMAIN-SUFFIX,claudestudio.com
   - DOMAIN-SUFFIX,claudemcpclient.com
   - DOMAIN-SUFFIX,claudemcpcontent.com
+  - DOMAIN-SUFFIX,claudepages.dev
+  - DOMAIN-SUFFIX,antspace.dev
   - DOMAIN,anthropic.auth0.com
   - DOMAIN,anthropic.com.cdn.cloudflare.net
   - DOMAIN,servd-anthropic-website.b-cdn.net
   - IP-CIDR,160.79.104.0/21,no-resolve
   - IP-CIDR6,2607:6bc0::/32,no-resolve
-  # Grok / xAI
+  - IP-ASN,399358,no-resolve
+
+  # xAI / Grok
+  # https://github.com/VPSDance/ai-proxy-rules/blob/main/rules/clash/x-ai.yaml
   - DOMAIN-SUFFIX,x.ai
   - DOMAIN-SUFFIX,grok.com
   - DOMAIN-SUFFIX,grok.x.com
   - DOMAIN-SUFFIX,grokipedia.com
+
   # Cursor
+  # https://github.com/VPSDance/ai-proxy-rules/blob/main/rules/clash/cursor.yaml
   - DOMAIN-SUFFIX,cursor.com
   - DOMAIN-SUFFIX,cursor.sh
   - DOMAIN-SUFFIX,cursor-cdn.com
   - DOMAIN-SUFFIX,cursorapi.com
+
   # GitHub / Microsoft Copilot
+  # https://github.com/VPSDance/ai-proxy-rules/blob/main/rules/clash/copilot.yaml
   - DOMAIN-SUFFIX,githubcopilot.com
   - DOMAIN-SUFFIX,copilot.microsoft.com
   - DOMAIN,copilot-proxy.githubusercontent.com
+  - DOMAIN,copilot-workspace.githubnext.com
+  - DOMAIN,copilotprodattachments.blob.core.windows.net
   - DOMAIN,sydney.bing.com
-  # Gemini / AI Studio / NotebookLM
+
+  # Google AI / Gemini / AI Studio / NotebookLM
+  # https://github.com/VPSDance/ai-proxy-rules/blob/main/rules/clash/google-ai.yaml
   - DOMAIN-SUFFIX,gemini.google.com
   - DOMAIN-SUFFIX,gemini.google
   - DOMAIN-SUFFIX,aistudio.google.com
   - DOMAIN-SUFFIX,ai.google.dev
+  - DOMAIN-SUFFIX,ai.studio
   - DOMAIN-SUFFIX,generativelanguage.googleapis.com
+  - DOMAIN-SUFFIX,generativeai.google
   - DOMAIN-SUFFIX,notebooklm.google
   - DOMAIN-SUFFIX,notebooklm.google.com
   - DOMAIN-SUFFIX,deepmind.google
   - DOMAIN-SUFFIX,deepmind.com
   - DOMAIN-SUFFIX,bard.google.com
-  - DOMAIN,alkalimakersuite-pa.clients6.google.com
-  - DOMAIN,notebooklm-pa.googleapis.com
+  - DOMAIN-SUFFIX,antigravity.google
+  - DOMAIN-SUFFIX,antigravity.google.com
   - DOMAIN-SUFFIX,gemini.gstatic.com
+  - DOMAIN-SUFFIX,makersuite.google.com
+  - DOMAIN-SUFFIX,jules.google
+  - DOMAIN-SUFFIX,jules.google.com
+  - DOMAIN,alkalimakersuite-pa.clients6.google.com
+  - DOMAIN,alkalicore-pa.clients6.google.com
+  - DOMAIN,notebooklm-pa.googleapis.com
+  - DOMAIN,notebooklm.googleapis.com
+  - DOMAIN,antigravity-pa.googleapis.com
+  - DOMAIN,antigravity.googleapis.com
+  - DOMAIN,cloudaicompanion.googleapis.com
+  - DOMAIN,cloudcode-pa.googleapis.com
+  - DOMAIN-SUFFIX,aicode.googleapis.com
+  - DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
