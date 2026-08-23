@@ -1,0 +1,11 @@
+# ChatGPT / OpenAI / Sora
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,sora.com
+DOMAIN-SUFFIX,chat.com
+DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,chatgpt.livekit.cloud
+IP-CIDR,199.47.142.0/23
+IP-ASN,401518
